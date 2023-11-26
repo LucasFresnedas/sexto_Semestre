@@ -1,21 +1,15 @@
-<?php
-session_start();
-if($_SESSION['log']!="ativo"){
-session_destroy();
-header("Location:login_inicio.php");
-}
- ?>
 <!doctype html>
 <html lang="en-US">
 	<head>
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
-
+    <link rel="icon" type="image/png" href="img/logouninove.png">
+		
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -68,8 +62,7 @@ header("Location:login_inicio.php");
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-													<li><a class="page-scroll" href="index_admin.php">Usuários</a></li>
-													<li><a class="page-scroll" href="sair.php">Sair</a></li>
+													<li><a class="page-scroll" href="sair.php">Voltar</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
@@ -86,9 +79,8 @@ header("Location:login_inicio.php");
 
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1>CRIAR NOVO USUARIO</h1>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
-								<p>#ImaginePossible</p>
+								<h1>SOLICITAR ACESSO</h1>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
                                 <div class="extra-space-l"></div>
 							</div>
 						</div>
@@ -102,12 +94,16 @@ header("Location:login_inicio.php");
 			<br>
 			<!-- Form começo -->
 			<form action="insere_usuario.php" method="post">
-				<center><p>Usuário<br><input type="text" name="usuario"></p></center>
+        <center><p>Nome completo:<br><input type="text" name="nome"></p></center>
+        <br>
+        <center><p>Email:<br><input type="text" name="email"></p></center>
+        <br>
+				<center><p>RA Aluno:<br><input type="text" name="usuario"></p></center>
 				<br>
-			 <center><p>Senha<br><input type="text" name="senha"></p></center>
+			 <center><p>Senha:<br><input type="text" name="senha"></p></center>
 				<br>
 				<br>
-			 <center><p><input type="submit"  name="Logar" value="Cadastrar"></center>
+			 <center><p><input type="submit"  name="Logar" value="Solicitar"></center>
 				 <br>
 				 <br>
 				 <br>

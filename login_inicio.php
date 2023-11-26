@@ -4,10 +4,11 @@
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
+		<link rel="icon" type="image/png" href="img/logouninove.png">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,21 +83,27 @@
 
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h2>LOGIN PRINCIPAL</h2>
+								<h2>LOGIN ALUNO</h2>
 								<br>
 								<form action="login_processa.php" method="post">
   							<div class="form-group">
     						<label for="exampleInputEmail1">LOGIN</label>
-    						<input type="text" name="usuario" class="form-control" placeholder="Enter login...">
+    						<input type="text" name="usuario" class="form-control" placeholder="Digite seu RA...">
   							</div>
 								<br>
   							<div class="form-group">
     						<label for="exampleInputPassword1">PASSWORD</label>
-    						<input type="password" name="senha" class="form-control" placeholder="Password...">
+    						<input type="password" name="senha" class="form-control" placeholder="Senha...">
   							</div>
   							<button type="submit" class="btn btn-primary">ENTRAR</button>
 								</form>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
+								<br>
+								<a href="form_new_usuario.php">
+								<button type="submit" class="btn btn-success">SOLICITAR ACESSO</button>
+								</a>
+								<div class="image">
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
+								</div>
 							</div>
 						</div>
 

@@ -15,10 +15,11 @@ $agenda=buscaChamadoAlterar($conexao,$id);
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
+    <link rel="icon" type="image/png" href="img/logouninove.png">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,9 +75,6 @@ $agenda=buscaChamadoAlterar($conexao,$id);
                         <ul class="nav navbar-nav navbar-right">
                           <li><a class="page-scroll" href="index.php">Home</a></li>
                           <li><a class="page-scroll" href="chamados.php">Chamados</a></li>
-                          <li><a class="page-scroll" href="tratamentos.php">Tratamentos</a></li>
-                          <li><a class="page-scroll" href="Informacoes_med.php">Informações MED</a></li>
-                          <li><a class="page-scroll" href="diario_med.php">Diário de bordo</a></li>
                           <li><a class="page-scroll" href="sair.php">Sair</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -94,10 +92,8 @@ $agenda=buscaChamadoAlterar($conexao,$id);
 
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1>ALTERAR TRATAMENTO DE ALARME</h1>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
-								<p>#ImaginePossible</p>
-                                <div class="extra-space-l"></div>
+								<h1>ALTERAR CHAMADO</h1>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
 							</div>
 						</div>
 					</div>
@@ -111,24 +107,10 @@ $agenda=buscaChamadoAlterar($conexao,$id);
 			<!-- Form começo -->
       <form name='flogin' method="post" action="altera_ticket.php" >
         <input type="hidden"  name="id" value="<?=$agenda['id']?>">
-				<center><p>Tipo<br><input type="text" name="tipo" placeholder="<?=$agenda['tipo']?>"></p></center>
-				<br>
-			 <center><p>Ticket<br><input type="text" name="ticket" placeholder="<?=$agenda['ticket']?>"></p></center>
-			 <br>
-				<center><p>Relacionado<br><input type="text" name="relacionado" placeholder="<?=$agenda['relacionado']?>"></p></center>
-				<br>
-				<center><p>Status Azure<br><input type="text" name="st_azure" placeholder="<?=$agenda['st_azure']?>"></p></center>
-				<br>
-				<center><p>Descrição<br><input type="text" name="descricao" placeholder="<?=$agenda['descricao']?>"></p></center>
-				<br>
-				<center><p>CCC<br><input type="text" name="ccc" placeholder="<?=$agenda['CCC']?>"></p></center>
-				<br>
-				<center><p>RESP. Ericsson<br><input type="text" name="resp_ericsson" placeholder="<?=$agenda['resp_ericsson']?>"></p></center>
-				<br>
-				<center><p>ÚLT. Atualização<br><textarea name="ult_atualizacao" rows="5" cols="40" placeholder="<?=$agenda['ult_atualizacao']?>"></textarea></p></center>
+				<center><p>Retorno<br><textarea name="retorno" rows="5" cols="40"></textarea></p></center>
 				<br>
 				<br>
-			 <center><p><input type="submit"  name="Logar" value="Cadastrar"></center>
+			 <center><p><input type="submit"  name="Logar" value="Retornar chamado"></center>
 				 <br>
 				 <br>
 				 <br>

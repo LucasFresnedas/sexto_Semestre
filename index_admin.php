@@ -13,11 +13,11 @@ header("Location:login_inicio.php");
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
-
+    <link rel="icon" type="image/png" href="img/logouninove.png">
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -70,6 +70,9 @@ header("Location:login_inicio.php");
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
+                          <li><a class="page-scroll" href="chamados.php">Home</a></li>
+                          <li><a class="page-scroll" href="solicitacoes.php">Solicitações</a></li>
+                          <li><a class="page-scroll" href="index_admin.php">Alunos</a></li>
 													<li><a class="page-scroll" href="sair.php">Sair</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -91,9 +94,8 @@ header("Location:login_inicio.php");
 
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1>Usuários</h1>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
-								<p>#ImaginePossible</p>
+								<h1>Alunos</h1>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
                                 <div class="extra-space-l"></div>
 							</div>
 						</div>
@@ -108,9 +110,6 @@ header("Location:login_inicio.php");
 			<!-- Começo tabela -->
 			<section id="main-container" class="main-container">
 			  <div class="container">
-			    <form action="form_new_usuario.php" method="post">
-						<button type="submit" class="btn btn-outline-dark">Criar novo</button>
-			      </form>
 						<br>
             <br>
 			    <div class="row">
@@ -118,7 +117,10 @@ header("Location:login_inicio.php");
 
 			        <table class="table">
 			            <tr>
-			              <th scope="col">USUÁRIO</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">NOME</th>
+                    <th scope="col">EMAIL</th>
+			              <th scope="col">RA</th>
 			              <th scope="col">SENHA</th>
 			              <th scope="col">EXCLUIR</th>
 			              <th scope="col">ATUALIZAR</th>
@@ -128,6 +130,9 @@ header("Location:login_inicio.php");
 									foreach($agendas as $agenda):
 									?>
 											<tr>
+                        <td><?php echo ($agenda['ativo'] == 1) ? 'Ativo' : 'Inativo'; ?></td>
+                        <td><?=$agenda['nome']?></td>
+                        <td><?=$agenda['email']?></td>
 												<td><?=$agenda['usuario']?></td>
 												<td><?=$agenda['senha']?></td>
 												<td>

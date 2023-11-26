@@ -15,7 +15,7 @@ if($_POST){
        $_SESSION['login']=$login;
        $_SESSION['log']='ativo';
        $_SESSION['login']=$resultado['codigo'];
-       header("Location:index_admin.php");
+       header("Location:chamados.php");
        die();
 
     }else{

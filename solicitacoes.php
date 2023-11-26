@@ -6,8 +6,6 @@ if($_SESSION['log']!="ativo"){
 session_destroy();
 header("Location:login_inicio.php");
 }
-$id=$_POST['codigo'];
-$agenda=buscaAlarmeAlterar($conexao,$id);
  ?>
 <!doctype html>
 <html lang="en-US">
@@ -15,11 +13,11 @@ $agenda=buscaAlarmeAlterar($conexao,$id);
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
-
+    <link rel="icon" type="image/png" href="img/logouninove.png">
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -65,26 +63,28 @@ $agenda=buscaAlarmeAlterar($conexao,$id);
 
 
                 <!-- Begin Navbar -->
-								<nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
                   <div class="container">
 
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                          <li><a class="page-scroll" href="index.php">Home</a></li>
-                          <li><a class="page-scroll" href="chamados.php">Chamados</a></li>
-                          <li><a class="page-scroll" href="tratamentos.php">Tratamentos</a></li>
-                          <li><a class="page-scroll" href="Informacoes_med.php">Informações MED</a></li>
-                          <li><a class="page-scroll" href="diario_med.php">Diário de bordo</a></li>
-                          <li><a class="page-scroll" href="sair.php">Sair</a></li>
+                          <li><a class="page-scroll" href="chamados.php">Home</a></li>
+                          <li><a class="page-scroll" href="solicitacoes.php">Solicitações</a></li>
+                          <li><a class="page-scroll" href="index_admin.php">Alunos</a></li>
+													<li><a class="page-scroll" href="sair.php">Sair</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
                 </nav>
                 <!-- End Navbar -->
+
             </header>
             <!-- ========= END HEADER =========-->
+
+
+
 
         	<!-- PAINEL PRINCIPAL COMEÇO -->
 			<section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/fundo_principal.jpg);">
@@ -94,39 +94,69 @@ $agenda=buscaAlarmeAlterar($conexao,$id);
 
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1>ALTERAR TRATAMENTO DE ALARME</h1>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
-								<p>#ImaginePossible</p>
+								<h1>SOLICTAÇÕES DE CADASTRO</h1>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
                                 <div class="extra-space-l"></div>
 							</div>
 						</div>
-					</div>
-				</div>
+
+					</div> <!-- /.caption -->
+				</div> <!-- /.container -->
 
 			</section>
 			<!-- PAINEL PRINCIPAL FIM -->
 			<br>
 			<br>
-			<br>
-			<!-- Form começo -->
-			<form action="altera_alarme.php" method="post">
-				<input type="hidden"  name="id" value="<?=$agenda['id']?>">
-        <center><p>Server<br><input type="text" name="server" placeholder="<?=$agenda['server']?>"></p></center>
-        <br>
-				<center><p>Alarme<br><input type="text" name="alarme" placeholder="<?=$agenda['alarme']?>"></p></center>
-				<br>
-			 <center><p>Tratamento<br><input type="text" name="resolucao" placeholder="<?=$agenda['resolucao']?>"></p></center>
-				<br>
-				<br>
-			 <center><p><input type="submit"  name="Logar" value="Atualizar"></center>
-				 <br>
-         <center><p><a class="page-scroll" href="tratamentos.php">Retornar</a></center>
-				 <br>
-				 <br>
-				 <br>
-			</form>
-			<!-- Form fim -->
+			<!-- Começo tabela -->
+			<section id="main-container" class="main-container">
+			  <div class="container">
+						<br>
+            <br>
+			    <div class="row">
+			      <div class="col-md-12">
 
+			        <table class="table">
+			            <tr>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">NOME</th>
+                    <th scope="col">EMAIL</th>
+			              <th scope="col">RA</th>
+			              <th scope="col">SENHA</th>
+			              <th scope="col">REJEITAR</th>
+			              <th scope="col">APROVAR</th>
+			            </tr>
+									<?php
+									$agendas=listaUsuario2($conexao);
+									foreach($agendas as $agenda):
+									?>
+											<tr>
+                        <td><?php echo ($agenda['ativo'] == 1) ? 'Ativo' : 'Inativo'; ?></td>
+                        <td><?=$agenda['nome']?></td>
+                        <td><?=$agenda['email']?></td>
+												<td><?=$agenda['usuario']?></td>
+												<td><?=$agenda['senha']?></td>
+												<td>
+												<form action="excluir_usuario_adm.php" method="post">
+												<input type="hidden" name="id" value="<?=$agenda['id']?>">
+												<button class="btn-danger">Rejeitar</button>
+													</form>
+												</td>
+												<td>
+												<form action="aprova_usuario.php" method="post">
+												<input type="hidden" name="codigo" value="<?=$agenda['id']?>">
+												<button class="btn-success">Aprovar</button>
+													</form>
+												</td>
+											</tr>
+									<?php
+									endforeach;
+									?>
+									</table>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- fim tabela -->
         <!-- Plugins JS -->
 		<script src="inc/jquery/jquery-1.11.1.min.js"></script>
 		<script src="inc/bootstrap/js/bootstrap.min.js"></script>

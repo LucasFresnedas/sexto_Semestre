@@ -4,10 +4,11 @@
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
+		<link rel="icon" type="image/png" href="img/logouninove.png">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,7 +97,7 @@
   							</div>
   							<button type="submit" class="btn btn-primary">ENTRAR</button>
 								</form>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
 							</div>
 						</div>
 

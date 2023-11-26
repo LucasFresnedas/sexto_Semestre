@@ -6,17 +6,25 @@ if($_SESSION['log']!="ativo"){
 session_destroy();
 header("Location:login_inicio.php");
 }
+
  ?>
 <!doctype html>
 <html lang="en-US">
 	<head>
-
+    <style media="screen">
+      .retorno{
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
+
+    <link rel="icon" type="image/png" href="img/logouninove.png">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,106 +73,107 @@ header("Location:login_inicio.php");
                 <!-- Begin Navbar -->
                 <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
                   <div class="container">
-
-
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-													<li><a class="page-scroll" href="index.php">Home</a></li>
-													<li><a class="page-scroll" href="chamados.php">Chamados</a></li>
-													<li><a class="page-scroll" href="tratamentos.php">Tratamentos</a></li>
-													<li><a class="page-scroll" href="Informacoes_med.php">Informações MED</a></li>
-													<li><a class="page-scroll" href="diario_med.php">Diário de bordo</a></li>
+                          <li><a class="page-scroll" href="index.php">Home</a></li>
+													<li><a class="page-scroll" href="form_new_ticket.php">Novo chamado</a></li>
+                          <li><a class="page-scroll" href="lista_chamados_aluno.php">Meus chamado</a></li>
 													<li><a class="page-scroll" href="sair.php">Sair</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
                 </nav>
                 <!-- End Navbar -->
-
             </header>
             <!-- ========= END HEADER =========-->
 
-
-
-
         	<!-- PAINEL PRINCIPAL COMEÇO -->
 			<section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/fundo_principal.jpg);">
-
 				<div class="container">
 					<div class="caption text-center text-white" data-stellar-ratio="0.7">
-
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1>Tratamento de chamados do Command Center</h1>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
-								<p>#ImaginePossible</p>
-                                <div class="extra-space-l"></div>
+								<h1>Meus Chamados</h1>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
 							</div>
 						</div>
-
-					</div> <!-- /.caption -->
-				</div> <!-- /.container -->
-
+					</div>
+				</div>
 			</section>
 			<!-- PAINEL PRINCIPAL FIM -->
+			<!-- Quebra de linha -->
 			<br>
 			<br>
-			<!-- Começo tabela -->
+			<!-- Quebra de linha -->
+			<!-- Inicio da lista de chamados -->
 			<section id="main-container" class="main-container">
 			  <div class="container">
-			    <form action="form_new_alarme.php" method="post">
-						<button type="submit" onclick="return confirm('Tem certeza que deseja abrir um novo tratamento?')" class="btn btn-outline-dark">Criar novo</button>
-			      </form>
-						<br>
+          <br>
+          <br>
+          <br>
+          <br>
+						<center><h2>Meus Chamados</h2></center>
+            <br>
             <br>
 			    <div class="row">
 			      <div class="col-md-12">
+              <!-- Inicio tabela -->
 			        <table class="table">
 			            <tr>
-                    <th scope="col">SERVER</th>
-			              <th scope="col">ALARME</th>
-			              <th scope="col">RESOLUÇÃO</th>
-			              <th scope="col">EXCLUIR</th>
-			              <th scope="col">ATUALIZAR</th>
+			              <th scope="col">NUMERO</th>
+                    <th scope="col">ALUNO</th>
+			              <th scope="col">TIPO</th>
+			              <th scope="col">PRIORIDADE</th>
+			              <th scope="col">DESCRIÇÃO</th>
+                    <th scope="col">DT CRIAÇÃO</th>
+                    <th scope="col">DIAS ABERTO</th>
+                    <th scope="col">RETORNO</th>
+                    <th scope="col">CASO</th>
 			            </tr>
 									<?php
-									$agendas=listaAlarme($conexao);
+                  $id = $_SESSION['usuario'];
+									$agendas=listaChamadosAlunos($conexao, $id);
 									foreach($agendas as $agenda):
-									?>
+                   ?>
 											<tr>
-                        <td><?=$agenda['server']?></td>
-												<td><?=$agenda['alarme']?></td>
-												<td><?=$agenda['resolucao']?></td>
-												<td>
-												<form action="excluir_alarme.php" method="post">
-												<input type="hidden" name="id" value="<?=$agenda['id']?>">
-												<button type="submit" onclick="return confirm('Tem certeza que deseja excluir este tratamento?')" class="btn-danger">Excluir</button>
-													</form>
-												</td>
-												<td>
-												<form action="atualizar_alarme.php" method="post">
-												<input type="hidden" name="codigo" value="<?=$agenda['id']?>">
-												<button type="submit" onclick="return confirm('Tem certeza que deseja atualizar este tratamento?')" class="btn-success">Atualizar</button>
-													</form>
-												</td>
+												<td><?=$agenda['id']?></td>
+												<td><?=$agenda['nome']?></td>
+												<td><?=$agenda['tipo']?></td>
+												<td><?=$agenda['prioridade']?></td>
+												<td><?=$agenda['descricao']?></td>
+												<td><?=$agenda['dt_criacao']?></td>
+                        <td><?php
+                        $parametro = $agenda['dt_criacao'];  //<---Recebe a Data do Banco de dados
+                        $parametro2 = date('d/m/Y'); //<---Recebe a data atual
+                        $data1 = DateTime::createFromFormat('d/m/Y', $parametro); //<---Formata a data no formato brasileiro e recebe a data do banco
+                        $data2 = DateTime::createFromFormat('d/m/Y', $parametro2); //<---Formata a data no formato brasileiro e recebe a data atual
+                        $diferenca = $data1->diff($data2)->days; //<---Calcula a diferença entre as datas
+                        echo " $diferenca dias."; //<---Da a saida de dados
+                         ?>
+                       </td>
+                       <td class="retorno"><?=$agenda['retorno']?></td>
+                       <td><?=$agenda['caso']?></td>
 											</tr>
 									<?php
 									endforeach;
 									?>
 								</table>
+                <!-- fim tabela -->
 								</div>
 							</div>
 						</div>
 					</section>
-					<!-- fim tabela -->
+					<!-- fim da lista de chamados -->
+
+
         <!-- Plugins JS -->
 		<script src="inc/jquery/jquery-1.11.1.min.js"></script>
 		<script src="inc/bootstrap/js/bootstrap.min.js"></script>
 		<script src="inc/owl-carousel/js/owl.carousel.min.js"></script>
 		<script src="inc/stellar/js/jquery.stellar.min.js"></script>
 		<script src="inc/animations/js/wow.min.js"></script>
-        <script src="inc/waypoints.min.js"></script>
+    <script src="inc/waypoints.min.js"></script>
 		<script src="inc/isotope.pkgd.min.js"></script>
 		<script src="inc/classie.js"></script>
 		<script src="inc/jquery.easing.min.js"></script>

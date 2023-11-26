@@ -13,10 +13,11 @@ header("Location:login_inicio.php");
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
+    <link rel="icon" type="image/png" href="img/logouninove.png">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,12 +69,10 @@ header("Location:login_inicio.php");
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-													  <li><a class="page-scroll" href="index.php">Home</a></li>
-                            <li><a class="page-scroll" href="chamados.php">Chamados</a></li>
-                            <li><a class="page-scroll" href="tratamentos.php">Tratamentos</a></li>
-                            <li><a class="page-scroll" href="Informacoes_med.php">Informações MED</a></li>
-                            <li><a class="page-scroll" href="diario_med.php">Diário de bordo</a></li>
-														<li><a class="page-scroll" href="sair.php">Sair</a></li>
+                          <li><a class="page-scroll" href="chamados.php">Home</a></li>
+                          <li><a class="page-scroll" href="solicitacoes.php">Solicitações</a></li>
+                          <li><a class="page-scroll" href="index_admin.php">Alunos</a></li>
+													<li><a class="page-scroll" href="sair.php">Sair</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
@@ -88,10 +87,8 @@ header("Location:login_inicio.php");
 					<div class="caption text-center text-white" data-stellar-ratio="0.7">
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1>Chamados Mediação</h1>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
-								<p>#ImaginePossible</p>
-                                <div class="extra-space-l"></div>
+								<h1>Chamados</h1>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
 							</div>
 						</div>
 					</div>
@@ -106,25 +103,11 @@ header("Location:login_inicio.php");
 			<section id="main-container" class="main-container">
 			  <div class="container">
           <div style="display: flex; justify-content: center;">
-            <a href="form_new_ticket.php" style="text-decoration: none; margin-right: 20px;">
-              <button type="submit" onclick="return confirm('Tem certeza que deseja abrir um novo chamado?')" style="padding: 10px 20px; border: 1px solid black;">Criar novo chamado</button>
-            </a>
 
             <a href="chamados.php" style="text-decoration: none; margin-right: 20px;">
               <button type="submit" style="padding: 10px 20px; border: 1px solid black;">Casos em Avaliação</button>
             </a>
 
-            <a href="https://timbrasil.service-now.com/now/nav/ui/classic/params/target/sc_req_item_list.do%3Fsysparm_query%3Dassignment_group%253D7d1335c11be93450e9162170f54bcb3a%255EORassignment_group%253D776803bf1bd33090e9162170f54bcb1e%255Estate%253D2%255EORstate%253D5%255EORstate%253D1%26sysparm_first_row%3D1%26sysparm_view%3D" target="_blank" style="text-decoration: none; margin-right: 20px;">
-              <button type="submit" style="padding: 10px 20px; border: 1px solid black;">REQS</button>
-            </a>
-
-            <a href="https://timbrasil.service-now.com/now/nav/ui/classic/params/target/incident_list.do%3Fsysparm_query%3Dassignment_group%253D7d1335c11be93450e9162170f54bcb3a%255EORassignment_group%253D0e40459e1b4af410e9162170f54bcb36%255EORassignment_group%253D776803bf1bd33090e9162170f54bcb1e%255Estate%253D3%26sysparm_first_row%3D1%26sysparm_view%3D" target="_blank" style="text-decoration: none; margin-right: 20px;">
-              <button type="submit" style="padding: 10px 20px; border: 1px solid black;">Incidentes</button>
-            </a>
-
-            <a href="https://timbrasil.service-now.com/now/nav/ui/classic/params/target/problem_list.do%3Fsysparm_query%3D123TEXTQUERY321%253DCTIO%2520IT%2520-%2520INTEGRATION%2520SOLUTIONS%2520MANAGEMENT%2520-%2520MEDIA%25C3%2587%25C3%2583O%2520PRD%2520-%2520N3%255Estate%253D103%26sysparm_first_row%3D1%26sysparm_view%3D" target="_blank" style="text-decoration: none; margin-right: 20px;">
-              <button type="submit" style="padding: 10px 20px; border: 1px solid black;">Problemas</button>
-            </a>
           </div>
           <br>
           <br>
@@ -146,19 +129,15 @@ header("Location:login_inicio.php");
               <!-- Inicio tabela -->
 			        <table class="table">
 			            <tr>
+                    <th scope="col">NUMERO</th>
+                    <th scope="col">ALUNO</th>
 			              <th scope="col">TIPO</th>
-			              <th scope="col">TICKET</th>
-			              <th scope="col">RELACIONADO</th>
-			              <th scope="col">DT CRIAÇÃO</th>
-			              <th scope="col">ST AZURE</th>
+			              <th scope="col">PRIORIDADE</th>
 			              <th scope="col">DESCRIÇÃO</th>
-			              <th scope="col">CCC</th>
-										<th scope="col">ERICSSON</th>
-										<th scope="col">ÚLT. ATUALIZAÇÃO</th>
-                    <th scope="col">FECHADO</th>
-										<th scope="col">DATA FECHAMENTO</th>
+                    <th scope="col">DT CRIAÇÃO</th>
+                    <th scope="col">DT FECHAMENTO</th>
+                    <th scope="col">RETORNO</th>
 			              <th scope="col">REABRIR</th>
-			              <th scope="col">ATUALIZAR</th>
                     <th scope="col">EXCLUIR</th>
 			            </tr>
 									<?php
@@ -166,27 +145,18 @@ header("Location:login_inicio.php");
 									foreach($agendas as $agenda):
 									?>
 											<tr>
+												<td><?=$agenda['id']?></td>
+												<td><?=$agenda['nome']?></td>
 												<td><?=$agenda['tipo']?></td>
-												<td><?=$agenda['ticket']?></td>
-												<td><?=$agenda['relacionado']?></td>
-												<td><?=$agenda['dt_criacao']?></td>
-												<td><?=$agenda['st_azure']?></td>
+												<td><?=$agenda['prioridade']?></td>
 												<td><?=$agenda['descricao']?></td>
-												<td><?=$agenda['CCC']?></td>
-												<td><?=$agenda['resp_ericsson']?></td>
-												<td><?=$agenda['ult_atualizacao']?></td>
-                        <td><?=$agenda['fechado']?></td>
+												<td><?=$agenda['dt_criacao']?></td>
 												<td><?=$agenda['dt_fechamento']?></td>
+												<td><?=$agenda['retorno']?></td>
 												<td>
 												<form action="reabre_chamado.php" method="post">
 												<input type="hidden" name="id" value="<?=$agenda['id']?>">
 												<button type="submit" onclick="return confirm('Tem certeza que deseja reabrir este chamado?')" class="btn-warning">Reabrir</button>
-													</form>
-												</td>
-												<td>
-												<form action="atualiza_chamado.php" method="post">
-												<input type="hidden" name="codigo" value="<?=$agenda['id']?>">
-												<button type="submit" onclick="return confirm('Tem certeza que deseja atualizar este chamado?')" class="btn-primary">Atualizar</button>
 													</form>
 												</td>
                         <td>

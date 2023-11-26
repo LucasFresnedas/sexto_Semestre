@@ -11,10 +11,11 @@ header("Location:login_inicio.php");
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
+    <link rel="icon" type="image/png" href="img/logouninove.png">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,11 +69,9 @@ header("Location:login_inicio.php");
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-													<li><a class="page-scroll" href="index.php">Home</a></li>
-													<li><a class="page-scroll" href="chamados.php">Chamados</a></li>
-													<li><a class="page-scroll" href="tratamentos.php">Tratamentos</a></li>
-													<li><a class="page-scroll" href="Informacoes_med.php">Informações MED</a></li>
-													<li><a class="page-scroll" href="diario_med.php">Diário de bordo</a></li>
+                          <li><a class="page-scroll" href="index.php">Home</a></li>
+													<li><a class="page-scroll" href="form_new_ticket.php">Novo chamado</a></li>
+                          <li><a class="page-scroll" href="lista_chamados_aluno.php">Meus chamado</a></li>
 													<li><a class="page-scroll" href="sair.php">Sair</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -94,10 +93,8 @@ header("Location:login_inicio.php");
 
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1>CRIAR NOVO TICKET</h1>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
-								<p>#ImaginePossible</p>
-                                <div class="extra-space-l"></div>
+								<h1>CRIAR NOVO CHAMADO</h1>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
 							</div>
 						</div>
 
@@ -111,25 +108,33 @@ header("Location:login_inicio.php");
 			<br>
 			<!-- Form começo -->
 			<form name='flogin' method="post" action="insere_ticket.php" >
-				<center><p>Tipo<br><input type="text" name="tipo" placeholder="TIR/INF/BUG..."></p></center>
+        <input type="hidden" name="id_aluno" value='<?=$_SESSION['usuario']?>'>
+				<center><div class="form-group">
+    <label for="exampleFormControlSelect1">Tipo:</label>
+    <select class="form-control" name="tipo">
+      <option>Relacionado curso</option>
+      <option>Negociação de débitos</option>
+      <option>Solicitação de Documentos</option>
+      <option>Problemas acessos de aulas</option>
+      <option>Reclamação</option>
+      <option>Outros</option>
+    </select></center>
 				<br>
-			 <center><p>Ticket<br><input type="text" name="ticket"></p></center>
+			 <center><div class="form-group">
+    <label for="exampleFormControlSelect1">Prioridade:</label>
+    <select class="form-control" name="prioridade">
+      <option>Baixa</option>
+      <option>Média</option>
+      <option>Alta</option>
+    </select></center>
 			 <br>
-				<center><p>Relacionado<br><input type="text" name="relacionado"></p></center>
+				<center>  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descrição:</label>
+    <textarea class="form-control" name="descricao" rows="5"></textarea>
+  </div></center>
+  <input type="hidden" class="form-control" name="dt_criacao" value="<?php date_default_timezone_set('America/Sao_Paulo'); echo date('d/m/Y') ?>">
 				<br>
-				<center><p>DT Criação<br><input type="date" name="dt_criacao"></p></center>
-				<br>
-				<center><p>Status Azure<br><input type="text" name="st_azure"></p></center>
-				<br>
-				<center><p>Descrição<br><input type="text" name="descricao"></p></center>
-				<br>
-				<center><p>CCC<br><input type="text" name="ccc"></p></center>
-				<br>
-				<center><p>RESP. Ericsson<br><input type="text" name="resp_ericsson"></p></center>
-				<br>
-				<center><p>ÚLT. Atualização<br><textarea name="ult_atualizacao" rows="5" cols="40"></textarea></p></center>
-				<br>
-				<br>
+        <br>
 			 <center><p><input type="submit"  name="Logar" value="Cadastrar"></center>
 				 <br>
 				 <br>

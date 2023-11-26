@@ -14,7 +14,7 @@ if($_POST){
        $resultado=buscaUsuario($conexao,$login,$senha);
        $_SESSION['login']=$login;
        $_SESSION['log']="ativo";
-       $_SESSION['usuario']=$resultado['usuario'];
+       $_SESSION['usuario']=$resultado['id'];
        $_SESSION['login']=$resultado['id'];
        header("Location:index.php");
        die();

@@ -1,20 +1,14 @@
-<?php
-session_start();
-if($_SESSION['log']!="ativo"){
-session_destroy();
-header("Location:login_inicio.php");
-}
-?>
 <!doctype html>
 <html lang="en-US">
 	<head>
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
+    <link rel="icon" type="image/png" href="img/logouninove.png">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,19 +55,14 @@ header("Location:login_inicio.php");
 
 
                 <!-- Begin Navbar -->
-                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+								<nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
                   <div class="container">
 
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-													<li><a class="page-scroll" href="index.php">Home</a></li>
-													<li><a class="page-scroll" href="chamados.php">Chamados</a></li>
-													<li><a class="page-scroll" href="tratamentos.php">Tratamentos</a></li>
-													<li><a class="page-scroll" href="Informacoes_med.php">Informações MED</a></li>
-													<li><a class="page-scroll" href="diario_med.php">Diário de bordo</a></li>
-													<li><a class="page-scroll" href="sair.php">Sair</a></li>
+													<li><a class="page-scroll" href="sair.php">Voltar</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
@@ -90,9 +79,8 @@ header("Location:login_inicio.php");
 
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1>CRIAR NOVO ALARME</h1>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
-								<p>#ImaginePossible</p>
+								<h1>ACESSO SOLICITADO !</h1>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
                                 <div class="extra-space-l"></div>
 							</div>
 						</div>
@@ -105,21 +93,6 @@ header("Location:login_inicio.php");
 			<br>
 			<br>
 			<!-- Form começo -->
-			<form action="insere_alarme.php" method="post" >
-				<br>
-				<center><p>Server<br><input type="text" name="server"></p></center>
-				<br>
-				<center><p>Alarme<br><input type="text" name="alarme"></p></center>
-				<br>
-			 <center><p>Tratamento<br><input type="text" name="resolucao" rows="5" cols="40"></p></center>
-				<br>
-				<br>
-			 <center><p><input type="submit"  name="Logar" value="Cadastrar"></center>
-				 <br>
-				 <br>
-				 <br>
-				 <br>
-			</form>
 			<!-- Form fim -->
 
         <!-- Plugins JS -->

@@ -5,40 +5,22 @@ include("classes.php");
 
 use Telegram\Bot\Api;
 
+$id_aluno = $_POST['id_aluno'];
 $tipo = $_POST['tipo'];
-$ticket = $_POST['ticket'];
-$relacionado = $_POST['relacionado'];
-
-//Conversão de datas
-$data_inserida = $_POST['dt_criacao']; //<---Recebe a data do formulario no formato 2023-03-16
-$data_formatada = DateTime::createFromFormat('Y-m-d', $data_inserida); //<---Converte a data para DateTime
-$data_formatada_br = $data_formatada->format('d/m/Y'); //<---deixa a data no padrão brasileiro
-$dt_criacao = $data_formatada_br; //<---Atribui a data no padrão brasileiro para o campo que vai ao banco de dados
-//Fim conversão
-
-$st_azure = $_POST['st_azure'];
+$prioridade = $_POST['prioridade'];
 $descricao = $_POST['descricao'];
-$CCC = $_POST['ccc'];
-$resp_ericsson = $_POST['resp_ericsson'];
-$ult_atualizacao = $_POST['ult_atualizacao'];
+$dt_criacao = $_POST['dt_criacao'];
 
 //<- TESTE DE VARIAVEL Inicio
+//echo "$id_aluno";
 //echo "$tipo";
-//echo "$ticket";
-//echo "$relacionado";
-//echo "$dt_criacao";
-//echo "$data_inserida";
-//echo "$data_formatada";
-//echo "$data_formatada_br";
-//echo "$st_azure";
+//echo "$prioridade";
 //echo "$descricao";
-//echo "$CCC";
-//echo "$resp_ericsson";
-//echo "$ult_atualizacao";
-//<- TESTE DE VARIAVEL fim
+//echo "$dt_criacao";
+
 try {
 
-  insereTicket($conexao, $tipo, $ticket, $relacionado, $dt_criacao, $st_azure, $descricao, $CCC, $resp_ericsson, $ult_atualizacao);
+  insereTicket($conexao, $id_aluno, $tipo, $prioridade, $descricao, $dt_criacao);
 
   // Substitua 'YOUR_BOT_TOKEN' pelo token do seu bot
   $token = '6584568113:AAHDqzrRitEsv7dGnPqvVZ58Ou1ntwj_Dqg';
@@ -57,7 +39,7 @@ try {
       'text' => $message,
   ]);
 
-header("Location:chamados.php");
+header("Location:index.php");
 
 } catch (Exception $e) {
   header("Location:index.php");

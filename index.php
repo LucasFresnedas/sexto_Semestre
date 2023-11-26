@@ -11,10 +11,11 @@ header("Location:login_inicio.php");
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
+    <link rel="icon" type="image/png" href="img/logouninove.png">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,10 +70,8 @@ header("Location:login_inicio.php");
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
 													<li><a class="page-scroll" href="index.php">Home</a></li>
-													<li><a class="page-scroll" href="chamados.php">Chamados</a></li>
-													<li><a class="page-scroll" href="tratamentos.php">Tratamentos</a></li>
-													<li><a class="page-scroll" href="Informacoes_med.php">Informações MED</a></li>
-													<li><a class="page-scroll" href="diario_med.php">Diário de bordo</a></li>
+													<li><a class="page-scroll" href="form_new_ticket.php">Novo chamado</a></li>
+                          <li><a class="page-scroll" href="lista_chamados_aluno.php">Meus chamado</a></li>
 													<li><a class="page-scroll" href="sair.php">Sair</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -94,10 +93,8 @@ header("Location:login_inicio.php");
 
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1>PAINEL ERICSSON MEDIAÇÃO</h1>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
-								<p>#ImaginePossible</p>
-                                <div class="extra-space-l"></div>
+								<h2>BEM VINDO A CENTRAL DE CHAMADOS !</h2>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
 							</div>
 						</div>
 

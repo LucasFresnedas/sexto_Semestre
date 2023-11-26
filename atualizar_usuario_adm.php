@@ -15,10 +15,11 @@ $agenda=buscaUsuarioAlterar($conexao,$id);
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ericsson Painel Mediação</title>
+		<title>Projeto chamados</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
+    <link rel="icon" type="image/png" href="img/logouninove.png">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +73,7 @@ $agenda=buscaUsuarioAlterar($conexao,$id);
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-													<li><a class="page-scroll" href="index_admin.php">Usuários</a></li>
+													<li><a class="page-scroll" href="index_admin.php">Alunos</a></li>
 													<li><a class="page-scroll" href="sair.php">Sair</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -90,9 +91,8 @@ $agenda=buscaUsuarioAlterar($conexao,$id);
 
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1>ALTERAR USUARIO</h1>
-								<p><img src="img/logo2.png" height="200px" width="200px"></p>
-								<p>#ImaginePossible</p>
+								<h1>ALTERAR Cadastro</h1>
+								<p><img src="img/logo_uninove.png" height="200px" width="200px"></p>
                                 <div class="extra-space-l"></div>
 							</div>
 						</div>
@@ -107,9 +107,15 @@ $agenda=buscaUsuarioAlterar($conexao,$id);
 			<!-- Form começo -->
 			<form action="altera_usuario.php" method="post">
 				<input type="hidden"  name="id" value="<?=$agenda['id']?>">
-				<center><p>Usuário<br><input type="text" name="usuario" placeholder="<?=$agenda['usuario']?>"></p></center>
+        <center><p>Status:<br><input type="text" name="ativo" value="<?=$agenda['ativo']?>"></p></center>
+        <br>
+        <center><p>Nome:<br><input type="text" name="nome" value="<?=$agenda['nome']?>"></p></center>
+        <br>
+        <center><p>Email:<br><input type="text" name="email" value="<?=$agenda['email']?>"></p></center>
+        <br>
+				<center><p>RA:<br><input type="text" name="usuario" value="<?=$agenda['usuario']?>"></p></center>
 				<br>
-			 <center><p>Senha<br><input type="text" name="senha" placeholder="<?=$agenda['senha']?>"></p></center>
+			 <center><p>Senha:<br><input type="text" name="senha" value="<?=$agenda['senha']?>"></p></center>
 				<br>
 				<br>
 			 <center><p><input type="submit"  name="Logar" value="Atualizar"></center>
